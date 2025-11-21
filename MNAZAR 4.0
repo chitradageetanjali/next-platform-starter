@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANZAR 4.0 Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!--
+    Narrative Plan (FINAL ORDER):
+    1. Introduction (About the Fest + KPIs)
+    2. Pre-Fest Buzz
+    3. The Competitions
+    4. Food Fest
+    5. Participating Institutions
+    6. Budget
+    7. Agenda
+    
+    Color Palette Selection:
+    Chosen Palette: "Vibrant & Passionate"
+    Tailwind Mapping: Red (`bg-red-600`), White (`bg-white`), Dark Grey (`text-gray-900`), Light Grey (`bg-gray-100`)
+    
+    Visualization Choices:
+    1. KPIs (Prize, Events, Days): Single Big Number (HTML/Tailwind). (NO SVG)
+    2. Estimated Budget: Donut Chart. Goal: Compare Composition. Method: Chart.js (Canvas), with enhanced legend displaying values. (NO SVG)
+    3. The Competitions: Detailed Cards (Structured HTML/Tailwind) with added financial details. (NO SVG)
+    4. 2-Day Agenda: Timeline (Structured HTML/CSS with Tailwind). (NO SVG)
+    5. College List & Sponsorship: Structured HTML/CSS with Tailwind for lists/grids. (NO SVG)
+    
+    Confirmation:
+    - NO Mermaid JS was used.
+    - NO SVG graphics were used.
+    -->
+    
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 640px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .og-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .og-header {
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-red-600 text-white p-6 shadow-md">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl og-title">MANZAR 4.0</h1>
+            <p class="text-xl md:text-2xl font-light">The National Student Management Fest</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-7xl p-4 sm:p-8">
+
+        <!-- 1. INTRODUCTION (About the Fest + KPIs) -->
+        <section class="text-center mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <!-- Adjusted for better fit -->
+                    <div class="text-5xl sm:text-6xl font-black text-red-600">₹50,000</div>
+                    <div class="text-base sm:text-xl font-semibold text-gray-900 mt-2">Cash Prize Pool UPTO</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-6xl font-black text-red-600">5+</div>
+                    <div class="text-xl font-semibold text-gray-900 mt-2">Core Competitions</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-6xl font-black text-red-600">2</div>
+                    <div class="text-xl font-semibold text-gray-900 mt-2">Action-Packed Days</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 border-l-8 border-red-600">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 og-header">About MANZAR 4.0</h2>
+                <p class="text-lg text-gray-700">
+                    Manzar is the annual Student Management Fest organized by the School of Management at Centurion University. Held over two days, the event is designed to foster managerial skills and an entrepreneurial spirit among students, providing a knowledge-driven journey for aspiring managers. It promotes holistic education and experiential learning, culminating in a vibrant cultural night showcasing student talent.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. PRE-FEST BUZZ -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center og-header">Pre-Fest Buzz: The Launch Campaign</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 border-r-8 border-red-600">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Event 1: Poster Release -->
+                    <div class="p-4 rounded-lg bg-gray-50 shadow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="text-red-600 text-3xl mr-2">📰</span> Poster Release Event
+                        </h3>
+                        <p class="text-sm text-gray-700">
+                            The official commencement of the MANZAR 4.0 promotion! Witness the grand unveiling of the official festival poster, setting the stage and tone for the biggest management fest of the year.
+                        </p>
+                        <p class="text-xs font-semibold text-red-600 mt-2">Objective: Generate immediate visibility and excitement.</p>
+                    </div>
+
+                    <!-- Event 2: Raahgiri -->
+                    <div class="p-4 rounded-lg bg-gray-50 shadow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 flex items-center">
+                            <span class="text-red-600 text-3xl mr-2">🚶</span> Raahgiri (Campus Walk)
+                        </h3>
+                        <p class="text-sm text-gray-700">
+                            An event where **campus roads** are temporarily closed to motorized vehicles and opened for people to enjoy recreational and community activities like walking, jogging, and cultural performances.
+                        </p>
+                        <p class="text-xs font-semibold text-red-600 mt-2">Objective: Promote community health and social interaction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. COMPETITIONS -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center og-header">The Competitions: Challenge Yourself</h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-5xl mx-auto text-center">
+                Explore all six core events. Each competition is designed to test a unique combination of strategic thinking, creativity, and execution speed.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Competition 1: The Venture Capital Pitch -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-2">💡</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Venture Capital Pitch</h3>
+                    <p class="text-gray-700 font-semibold mb-2">The 14-Hour Hackathon Culmination</p>
+                    <p class="text-sm text-gray-600">Teams pitch the innovative idea they developed during the 14-Hour Hackathon/Challenge to a panel of judges acting as VCs. Focus is on innovation and financial viability.</p>
+                    <div class="mt-4 pt-2 border-t border-gray-200">
+                        <p class="text-sm font-semibold text-red-600">Cash Prize: ₹16,000</p>
+                        <p class="text-sm font-semibold text-gray-700">Reg. Fee: ₹799/member (4 max)</p>
+                    </div>
+                    <p class="text-sm text-red-600 mt-2">Format: 14-Hour Prep, 5 min Pitch + 3 min Q&A.</p>
+                    <button onclick="generateIdea('venture')" class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition duration-300">
+                        Generate Idea 🚀
+                    </button>
+                    <div id="venture-output" class="text-xs mt-2 text-gray-600 p-2 bg-gray-50 rounded hidden"></div>
+                </div>
+                
+                <!-- Competition 2: The Start-Up Sprint -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-2">🚀</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Start-Up Sprint (MAD DASH)</h3>
+                    <p class="text-gray-700 font-semibold mb-2">High-Octane Ideation</p>
+                    <p class="text-sm text-gray-600">Teams receive a surprise Problem Statement and have just 2 hours to brainstorm a solution, define a brand, and prepare a 5-slide pitch deck.</p>
+                    <div class="mt-4 pt-2 border-t border-gray-200">
+                        <p class="text-sm font-semibold text-red-600">Cash Prize: ₹3,000</p>
+                        <p class="text-sm font-semibold text-gray-700">Reg. Fee: ₹299/member (2 max)</p>
+                    </div>
+                    <p class="text-sm text-red-600 mt-2">Format: 2-Hour Prep.</p>
+                    <button onclick="generateIdea('sprint')" class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition duration-300">
+                        Generate Idea 🚀
+                    </button>
+                    <div id="sprint-output" class="text-xs mt-2 text-gray-600 p-2 bg-gray-50 rounded hidden"></div>
+                </div>
+                
+                <!-- Competition 3: Quiz Connect Game -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-2">🧠</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Quiz Connect Game (Kahoot)</h3>
+                    <p class="text-gray-700 font-semibold mb-2">Live Kahoot Trivia</p>
+                    <p class="text-sm text-gray-600">A high-energy, live Kahoot quiz testing knowledge in Marketing Mania, Business Buzz, and a Surprise Round of pop culture trivia. Speed and accuracy count!</p>
+                    <div class="mt-4 pt-2 border-t border-gray-200">
+                        <p class="text-sm font-semibold text-red-600">Cash Prize: ₹1,500</p>
+                        <p class="text-sm font-semibold text-gray-700">Reg. Fee: ₹69/individual</p>
+                    </div>
+                    <p class="text-sm text-red-600 mt-2">Format: 30 minutes.</p>
+                </div>
+                
+                <!-- Competition 4: Pixels to Plots -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-2">✍️</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Pixels to Plots</h3>
+                    <p class="text-700 font-semibold mb-2">Creative Storytelling Showdown</p>
+                    <p class="text-sm text-gray-600">Participants are shown a random, single image and must craft and narrate a short, original story on the spot within 15 minutes, connecting meaningfully to the prompt.</p>
+                    <div class="mt-4 pt-2 border-t border-gray-200">
+                        <p class="text-sm font-semibold text-red-600">Cash Prize: ₹1,500</p>
+                        <p class="text-sm font-semibold text-gray-700">Reg. Fee: ₹149/member (2 max)</p>
+                    </div>
+                    <p class="text-sm text-red-600 mt-2">Format: 15 min writing.</p>
+                    <button onclick="generateStoryStarter()" class="mt-4 w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700 transition duration-300">
+                        Get Story Starter 📚
+                    </button>
+                    <div id="plots-output" class="text-xs mt-2 text-gray-600 p-2 bg-gray-50 rounded hidden"></div>
+                </div>
+                
+                <!-- Competition 5: The Digital Disruption Hunt -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-2">🗺️</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">The Digital Disruption Hunt (Treasure Hunt)</h3>
+                    <p class="text-gray-700 font-semibold mb-2">QR-Code Treasure Hunt</p>
+                    <p class="text-sm text-gray-600">A modern, paperless treasure hunt run through QR codes, Google Maps pins, and social media tasks, rewarding technical and strategic navigation.</p>
+                    <div class="mt-4 pt-2 border-t border-gray-200">
+                        <p class="text-sm font-semibold text-red-600">Cash Prize: ₹3,000</p>
+                        <p class="text-sm font-semibold text-gray-700">Reg. Fee: ₹79/member (5 max)</p>
+                    </div>
+                    <p class="text-sm text-red-600 mt-2">Format: Campus-wide.</p>
+                </div>
+                
+                <!-- Competition 6: Firestorm Battle -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-red-600 md:col-span-2 lg:col-span-1">
+                    <div class="text-4xl mb-2">🎮</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Firestorm Battle (24 Squads)</h3>
+                    <p class="text-gray-700 font-semibold mb-2">Digital Battle Royale</p>
+                    <p class="text-sm text-gray-600">A competitive gaming tournament where 24 squads battle in classic maps, progressing through multiple stages to crown the ultimate champion.</p>
+                    <div class="mt-4 pt-2 border-t border-gray-200">
+                        <p class="text-sm font-semibold text-red-600">Cash Prize: ₹3,000</p>
+                        <p class="text-sm font-semibold text-gray-700">Reg. Fee: ₹250/squad</p>
+                    </div>
+                    <p class="text-sm text-red-600 mt-2">Format: Multi-Stage Tournament.</p>
+                </div>
+
+            </div>
+            <p class="text-sm text-center text-gray-500 italic mt-6">All competitions contribute to the final grand prize pool of ₹50,000, which includes cash, prizes, and vouchers.</p>
+        </section>
+
+
+        <!-- 4. FOOD FEST & STALLS -->
+        <section class="mb-12">
+            <div class="bg-red-100 rounded-lg shadow-lg p-6 md:p-8 border-l-8 border-red-600">
+                <h2 class="text-3xl font-bold text-red-600 mb-4 og-header flex items-center">
+                    <span class="text-4xl mr-3">🍔</span> MANZAR FOOD FEST: The Stall Plaza
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800">
+                    <div>
+                        <p class="text-lg font-semibold mb-2">Exclusive 2-Day Chill Zone</p>
+                        <p class="text-base mb-4">
+                            Stalls will be available for both days of the fest, offering an exclusive area for everyone—participants, faculty, and visitors—to chill, eat, and relax between high-octane competitions. Enjoy a diverse range of food and merchandise.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold mb-2">Entrepreneurial Opportunity</p>
+                        <ul class="list-disc list-inside text-base ml-4">
+                            <li>**Open to All:** Students, external vendors, and entrepreneurs are welcome to set up stalls.</li>
+                            <li>**Rent-Based Model:** Stalls are available for rent, providing a unique business platform.</li>
+                            <li>**High Footfall:** Benefit from the huge crowd and energy of the National Student Management Fest.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PARTICIPATING INSTITUTIONS -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 border-r-8 border-red-600">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center og-header">
+                    <span class="text-red-600 text-4xl mr-2">🎓</span> Participating Institutions
+                </h2>
+                <p class="text-lg text-gray-700 mb-8 max-w-5xl mx-auto text-center">
+                    MANZAR 4.0 brings together the brightest management minds from leading colleges across the region to compete and collaborate.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    
+                    <!-- Centurion University Campuses -->
+                    <div class="p-4 bg-red-50 text-red-800 rounded-lg shadow-sm text-center font-bold border border-red-300">
+                        CUTM - Bhubaneswar Campus
+                    </div>
+                    <div class="p-4 bg-red-50 text-red-800 rounded-lg shadow-sm text-center font-bold border border-red-300">
+                        CUTM - Vizianagaram Campus
+                    </div>
+                    
+                    <!-- Invited Colleges (UPDATED LOCATIONS) -->
+                    <div class="p-4 bg-gray-50 text-gray-800 rounded-lg shadow-sm text-center font-semibold border border-gray-300">
+                        AITAM College, Tekkali
+                    </div>
+                    <div class="p-4 bg-gray-50 text-gray-800 rounded-lg shadow-sm text-center font-semibold border border-gray-300">
+                        GIET College, Gunupur
+                    </div>
+                    <div class="p-4 bg-gray-50 text-gray-800 rounded-lg shadow-sm text-center font-semibold border border-gray-300">
+                        GITA College, BBSR
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. FEST BUDGET -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center og-header">Fest Budget: Investing in Brilliance</h2>
+                <p class="text-lg text-gray-700 mb-6 max-w-3xl mx-auto text-center">
+                    The total estimated budget is **₹115,000**. Our investment prioritizes talent rewards, with ₹50,000 dedicated to cash prizes. The chart legend clearly shows the budget allocation in Indian Rupees.
+                </p>
+                <div class="chart-container">
+                    <canvas id="budgetChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. AGENDA -->
+        <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center og-header">The 2-Day Agenda</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b-4 border-red-600 pb-2">🌟 DAY 1: IGNITE</h3>
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-0 h-full w-1 bg-red-600 rounded-full"></div>
+                        
+                        <div class="mb-6 relative">
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">10:00 AM</div>
+                                <div class="font-semibold text-gray-900">Inauguration Ceremony</div>
+                            </div>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">10:30 AM</div>
+                                <div class="font-semibold text-gray-900">Expert Talk: Leadership & Innovation</div>
+                            </div>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">11:30 AM</div>
+                                <div class="font-semibold text-gray-900">🏆 Award Ceremony</div>
+                                <p class="text-sm text-gray-700">Manzar Appreciation Awards for Faculty & Students.</p>
+                            </div>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">12:30 PM</div>
+                                <div class="font-semibold text-gray-900">Management Competitions Start</div>
+                                <p class="text-sm text-gray-700">The core events commence across the campus.</p>
+                            </div>
+                        </div>
+                        <div class="mb-6 relative">
+                            <!-- UPDATED: Linking Hackathon to VC Pitch Prep -->
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">8:00 PM</div>
+                                <div class="font-semibold text-gray-900">14-Hour Hackathon Begins (Venture Pitch Prep)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b-4 border-red-600 pb-2">🌈 DAY 2: CELEBRATE</h3>
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-0 h-full w-1 bg-red-600 rounded-full"></div>
+                        
+                        <div class="mb-6 relative">
+                            <!-- UPDATED: Linking Presentations to VC Pitches -->
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">10:30 AM</div>
+                                <div class="font-semibold text-gray-900">Hackathon Presentations (The VC Pitches)</div>
+                            </div>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">11:00 AM</div>
+                            <div class="font-semibold text-gray-900">Remaining Competitions Proceed</div>
+                            <p class="text-sm text-gray-700">The final rounds of competitions continue.</p>
+                            </div>
+                        </div>
+                        <!-- Brand Revival Challenge REMOVED from Day 2 agenda -->
+                        <div class="mb-6 relative">
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">4:00 PM</div>
+                                <div class="font-semibold text-gray-900">Cultural Extravaganza</div>
+                            </div>
+                        </div>
+                        <div class="mb-6 relative">
+                            <div class="absolute left-[-38px] top-1 w-6 h-6 bg-red-600 rounded-full border-4 border-white"></div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <div class="font-bold text-red-600">7:00 PM</div>
+                                <div class="font-semibold text-gray-900">Closing Ceremony & Vote of Thanks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white p-6 mt-12 text-center">
+        <p>MANZAR 4.0 | School of Management</p>
+    </footer>
+
+    <script>
+        // --- LLM API UTILITY FUNCTIONS (FOR INTERACTIVITY) ---
+
+        const API_KEY = ""; // Placeholder, provided by runtime
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
+        
+        async function fetchWithExponentialBackoff(payload, maxRetries = 5, delay = 1000) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.status === 429) { // Rate limit exceeded
+                        if (i < maxRetries - 1) {
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            delay *= 2; // Exponential backoff
+                            continue;
+                        }
+                    }
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    return response.json();
+
+                } catch (error) {
+                    if (i === maxRetries - 1) {
+                        throw error;
+                    }
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+        }
+        
+        function formatOutput(text, sources) {
+            let html = `<p class="font-medium">${text}</p>`;
+            if (sources && sources.length > 0) {
+                html += `<div class="mt-2 pt-2 border-t border-gray-200">`;
+                html += `<p class="font-bold text-xs mb-1">Sources:</p>`;
+                html += `<ul class="list-disc list-inside space-y-0">`;
+                sources.slice(0, 3).forEach(source => {
+                    if (source.uri) {
+                        html += `<li><a href="${source.uri}" target="_blank" class="text-blue-500 hover:underline">${source.title || source.uri}</a></li>`;
+                    }
+                });
+                html += `</ul></div>`;
+            }
+            return html;
+        }
+
+        async function generateContent(userQuery, systemPrompt, useSearchGrounding = false) {
+            const outputElement = event.target.nextElementSibling;
+            const button = event.target;
+            
+            outputElement.innerHTML = `<span class="text-red-500 flex items-center"><svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Generating idea...</span>`;
+            outputElement.classList.remove('hidden');
+            button.disabled = true;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+            };
+            
+            if (useSearchGrounding) {
+                payload.tools = [{ "google_search": {} }];
+            }
+
+            try {
+                const result = await fetchWithExponentialBackoff(payload);
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const text = candidate.content.parts[0].text;
+                    
+                    let sources = [];
+                    const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        sources = groundingMetadata.groundingAttributions
+                            .map(attribution => ({
+                                uri: attribution.web?.uri,
+                                title: attribution.web?.title,
+                            }))
+                            .filter(source => source.uri);
+                    }
+
+                    outputElement.innerHTML = formatOutput(text, sources);
+
+                } else {
+                    outputElement.innerHTML = `<span class="text-red-500">Error: Could not generate content. Please try again.</span>`;
+                }
+            } catch (error) {
+                outputElement.innerHTML = `<span class="text-red-500">API Error: Check your connection or console for details.</span>`;
+                console.error("Gemini API call failed:", error);
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        function generateIdea(type) {
+            const userQuery = `Generate one single, innovative, modern business problem statement relevant to college students or local community that can be solved with a simple mobile app or service. Focus on areas like sustainability, micro-learning, or campus efficiency.`;
+            const systemPrompt = `Act as an innovative startup advisor. Provide only the problem statement, without any introduction, solution, or concluding remarks. The statement should be concise and real-world applicable.`;
+            generateContent(userQuery, systemPrompt, true);
+        }
+
+        function generateStoryStarter() {
+            const userQuery = `Generate one high-concept, descriptive scene that can be used as a writing prompt. The scene should be mysterious, visual, and require creativity to resolve. Include elements of management or business failure in the background.`;
+            const systemPrompt = `Act as a creative writing prompt generator. Provide only the scene description, without introductory or concluding remarks. The output should be 3-4 sentences long.`;
+            generateContent(userQuery, systemPrompt, false);
+        }
+
+        // --- CHART.JS IMPLEMENTATION (DO NOT CHANGE) ---
+
+        document.addEventListener('DOMContentLoaded', function() {
+            function tooltipTitleCallback(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            }
+            
+            const sharedTooltipOptions = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            };
+
+            const budgetCtx = document.getElementById('budgetChart');
+            if (budgetCtx) {
+                new Chart(budgetCtx, {
+                    type: 'doughnut',
+                    data: {
+                        // Updated Cash Prizes to 50,000 and updated the associated label
+                        labels: ['Cash Prizes (₹50k)', 'Manzar-First Look (₹20k)', 'Publicity (₹15k)', 'Stage & Tech (₹10k)', 'Decor (₹10k)', 'Guest & Jury (₹5k)', 'Stationery (₹5k)'],
+                        datasets: [{
+                            label: 'Estimated Cost (₹)',
+                            // Updated data array: replacing 26250 with 50000
+                            data: [50000, 20000, 15000, 10000, 10000, 5000, 5000],
+                            backgroundColor: [
+                                '#DC2626', 
+                                '#1F2937', 
+                                '#4B5563', 
+                                '#6B7280', 
+                                '#9CA3AF', 
+                                '#D1D5DB', 
+                                '#E5E7EB'  
+                            ],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        ...sharedTooltipOptions,
+                        plugins: {
+                            ...sharedTooltipOptions.plugins,
+                            legend: {
+                                position: 'right',
+                                labels: {
+                                    // Customizing the legend to explicitly show the values in the label
+                                    generateLabels: (chart) => {
+                                        const data = chart.data;
+                                        if (data.labels.length && data.datasets.length) {
+                                            const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                            return data.labels.map((label, i) => {
+                                                const value = data.datasets[0].data[i];
+                                                const percentage = ((value / total) * 100).toFixed(1);
+                                                return {
+                                                    text: `${label.split('(')[0].trim()} (₹${(value / 1000).toFixed(1).replace(/\.0$/, '')}k) - ${percentage}%`, // Display label, value, and percentage
+                                                    fillStyle: data.datasets[0].backgroundColor[i],
+                                                    strokeStyle: data.datasets[0].borderColor,
+                                                    lineWidth: data.datasets[0].borderWidth,
+                                                    index: i
+                                                };
+                                            });
+                                        }
+                                        return [];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
